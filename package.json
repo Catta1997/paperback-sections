@@ -1,18 +1,25 @@
 {
   "name": "paperback-sections",
-  "version": "0.0.2",
-  "main": "dist/index.js",
-  "type": "module",
+  "version": "0.0.3",
   "files": [
     "dist"
   ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "format": "oxfmt .",
+    "lint": "oxlint --type-aware --fix"
+  },
+  "dependencies": {
+    "oxfmt": "^0.48.0",
+    "oxlint": "^1.63.0",
+    "oxlint-tsgolint": "^0.22.1",
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
     "@paperback/types": "^1.0.0-alpha.91"
-  },
-  "dependencies": {
-    "typescript": "^6.0.2"
   }
 }
